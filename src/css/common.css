@@ -1,0 +1,4 @@
+.main-container {
+  width: var(--main-container);
+  margin: 0 auto;
+}

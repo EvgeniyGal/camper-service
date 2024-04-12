@@ -1,0 +1,75 @@
+.left-container {
+  width: 360px;
+}
+
+.filter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+.checkbox-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.checkbox-item-container {
+  width: calc((100% - 20px) / 3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  border: 1px solid var(--label);
+  border-radius: 10px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.checkbox-item-container input {
+  display: none;
+}
+
+.checkbox-item-container svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--main);
+  fill: var(--main);
+}
+
+.decor {
+  width: 100%;
+  height: 1px;
+  background-color: var(--decor);
+}
+
+.radio-btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.radio-btn-item-container {
+  width: calc((100% - 20px) / 3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--label);
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.radio-btn-container input {
+  /* display: none; */
+}
+
+.radio-btn-container svg {
+  width: 40px;
+  height: 28px;
+  stroke: var(--main);
+  fill: var(--main);
+}

@@ -1,0 +1,14 @@
+:root {
+  --main: #101828;
+  --button: #e44848;
+  --inputs: #f7f7f7;
+  --block-feature: #f2f4f7;
+  --rating: #ffc531;
+  --text: #475467;
+  --label: rgba(16, 24, 40, 0.6);
+  --decor: rgba(16, 24, 40, 0.1);
+
+  --main-container: 902px;
+
+  --main-font: "Inter", sans-serif;
+}
