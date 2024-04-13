@@ -1,0 +1,16 @@
+.catalog-container {
+  width: calc(100% - 360px);
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-bottom: 100px;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.list-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}

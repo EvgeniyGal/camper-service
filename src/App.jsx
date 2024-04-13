@@ -5,7 +5,6 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Catalog />} />
-
       <Route path="/catalog" element={<Catalog />} />
     </Routes>
   );

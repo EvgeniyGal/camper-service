@@ -1,14 +1,15 @@
-import Input from "../input/Input";
-import styles from "./Aside.module.css";
+import Input from "../Input/Input";
+import styles from "./AsideFilter.module.css";
 import svgSprite from "../../assets/images/sprite.svg";
+import Button from "../Button/Button";
 
-export default function Aside() {
+export default function AsideFilter() {
   return (
     <aside className={styles["left-container"]}>
       <form className={styles["filter-form"]} action="submit">
         <Input iconName="location">Location</Input>
-        <p>Filter</p>
-        <p>Vehicle equipment</p>
+        <p className={styles["filter-name"]}>Filter</p>
+        <p className={styles["element-name"]}>Vehicle equipment</p>
         <p className={styles["decor"]}></p>
         <div className={styles["checkbox-container"]}>
           <label className={styles["checkbox-item-container"]}>
@@ -33,9 +34,9 @@ export default function Aside() {
             <span>Kitchen</span>
           </label>
           <label className={styles["checkbox-item-container"]}>
-            <input type="checkbox" id="equip" name="equip" value="tv" />
+            <input type="checkbox" id="equip" name="equip" value="TV" />
             <svg>
-              <use href={`${svgSprite}#tv`}></use>
+              <use href={`${svgSprite}#TV`}></use>
             </svg>
             <span>TV</span>
           </label>
@@ -47,7 +48,7 @@ export default function Aside() {
             <span>Shower</span>
           </label>
         </div>
-        <p>Vehicle type</p>
+        <p className={styles["element-name"]}>Vehicle type</p>
         <p className={styles["decor"]}></p>
         <div className={styles["radio-btn-container"]}>
           <label className={styles["radio-btn-item-container"]}>
@@ -79,6 +80,9 @@ export default function Aside() {
             <span>Alcove</span>
           </label>
         </div>
+        <p className={styles["btn-container"]}>
+          <Button btnStyle="search">Search</Button>
+        </p>
       </form>
     </aside>
   );

@@ -1,0 +1,18 @@
+export const featureMapper = {
+  adults: { isNumber: true, isText: false, text: " adults" },
+  children: { isNumber: true, isText: false, text: " children" },
+  airConditioner: { isNumber: true, isText: false, text: "AC" },
+  bathroom: { isNumber: false, isText: false, text: "Bathroom" },
+  kitchen: { isNumber: false, isText: false, text: "Kitchen" },
+  beds: { isNumber: true, isText: true, text: "" },
+  TV: { isNumber: false, isText: false, text: "TV" },
+  CD: { isNumber: false, isText: false, text: "CD" },
+  radio: { isNumber: false, isText: false, text: "Radio" },
+  shower: { isNumber: false, isText: false, text: "Shower" },
+  toilet: { isNumber: false, isText: false, text: "Toilet" },
+  freezer: { isNumber: false, isText: false, text: "Freezer" },
+  hob: { isNumber: true, isText: false, text: "Hob" },
+  microwave: { isNumber: false, isText: false, text: "Microwave" },
+  gas: { isNumber: true, isText: false, text: "" },
+  water: { isNumber: true, isText: false, text: "" },
+};
