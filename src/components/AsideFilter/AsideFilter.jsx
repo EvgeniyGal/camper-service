@@ -1,7 +1,7 @@
-import Input from "../Input/Input";
 import styles from "./AsideFilter.module.css";
 import svgSprite from "../../assets/images/sprite.svg";
 import Button from "../Button/Button";
+import Input from "../Input/Input";
 
 export default function AsideFilter() {
   return (
