@@ -1,0 +1,4 @@
+.content-container {
+  display: flex;
+  gap: 64px;
+}

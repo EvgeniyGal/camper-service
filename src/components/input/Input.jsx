@@ -5,7 +5,6 @@ export default function Input({ children, name, iconName, ...props }) {
   return (
     <div className={styles["input-container"]}>
       <label className={styles["input-label"]} htmlFor={name}>
-        {" "}
         {children}
       </label>
       <p className={styles["input-field-container"]}>
@@ -18,7 +17,6 @@ export default function Input({ children, name, iconName, ...props }) {
           }`}
           name={name}
           id={name}
-          placeholder="Lorem ipsum"
           type="text"
           {...props}
         />

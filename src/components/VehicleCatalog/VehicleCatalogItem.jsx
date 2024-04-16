@@ -2,22 +2,33 @@ import Button from "../Button/Button";
 import styles from "./VehicleCatalogItem.module.css";
 import svgSprite from "../../assets/images/sprite.svg";
 import Details from "../Details/Details";
+import { favoritesSelector } from "../../store/selectors";
+import { useDispatch, useSelector } from "react-redux";
+import { favoritesActions } from "../../store/slices/favorites";
 
-export default function VehicleCatalogItem({ adverts }) {
+export default function VehicleCatalogItem({ advert }) {
+  const favorites = useSelector(favoritesSelector);
+  const dispatch = useDispatch();
+
   const features = Object.entries({
-    adults: adverts.adults,
-    children: adverts.children,
-    ...adverts.details,
+    adults: advert.adults,
+    children: advert.children,
+    ...advert.details,
   }).filter((feature) => feature[1] !== 0 && feature[1] !== "");
+
   return (
     <li className={styles["list-item"]}>
-      <img src={adverts.gallery[0]} alt={adverts.name} />
+      <img src={advert.gallery[0]} alt={advert.name} />
       <div className={styles["info-container"]}>
         <p className={styles["title-container"]}>
-          <span>{adverts.name}</span>
+          <span>{advert.name}</span>
           <span>
-            {formatPrice(adverts.price)}
-            <Button isFavorite={false} btnStyle="icon">
+            {formatPrice(advert.price)}
+            <Button
+              onClick={() => dispatch(favoritesActions.toggle(advert._id))}
+              isFavorite={favorites.includes(advert._id)}
+              btnStyle="icon"
+            >
               heart
             </Button>
           </span>
@@ -27,16 +38,16 @@ export default function VehicleCatalogItem({ adverts }) {
             <svg>
               <use href={`${svgSprite}#star`}></use>
             </svg>
-            {adverts.rating} ({adverts.reviews.length} reviews)
+            {advert.rating} ({advert.reviews.length} reviews)
           </span>
           <span>
             <svg className={styles["location-icon"]}>
               <use href={`${svgSprite}#location`}></use>
             </svg>
-            {adverts.location}
+            {advert.location}
           </span>
         </p>
-        <p className={styles["description"]}>{adverts.description}</p>
+        <p className={styles["description"]}>{advert.description}</p>
         <Details features={features} />
         <Button btnStyle="show">Show more</Button>
       </div>

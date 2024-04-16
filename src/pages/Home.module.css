@@ -1,0 +1,20 @@
+.home-container {
+  margin-bottom: 50px;
+}
+
+.home-container h1 {
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+  line-height: 1.25;
+  color: var(--main);
+  margin-bottom: 24px;
+}
+
+.home-container p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+  margin-bottom: 16px;
+}

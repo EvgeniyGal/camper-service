@@ -1,27 +1,41 @@
-import { useEffect } from "react";
-import { getAdverts } from "../../utils/camper-service-api";
 import Button from "../Button/Button";
 import styles from "./VehicleCatalog.module.css";
 import VehicleCatalogItem from "./VehicleCatalogItem";
-import { useState } from "react";
+import {
+  favoritesAdvertsSelector,
+  filteredAdvertsSelector,
+} from "../../store/selectors";
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 
-export default function VehicleCatalog() {
-  const [adverts, setAdverts] = useState([]);
+export default function VehicleCatalog({ content }) {
+  const [maxAdverts, setMaxAdverts] = useState(4);
+  const adverts = useSelector(
+    content === "catalog" ? filteredAdvertsSelector : favoritesAdvertsSelector
+  );
 
   useEffect(() => {
-    getAdverts().then((data) => {
-      setAdverts(data);
-    });
-  }, []);
+    setMaxAdverts(4);
+  }, [adverts]);
+
+  function handleLoadMore() {
+    setMaxAdverts(
+      maxAdverts + 4 < adverts.length ? maxAdverts + 4 : adverts.length
+    );
+  }
 
   return (
     <div className={styles["catalog-container"]}>
       <ul className={styles["list-container"]}>
-        {adverts.map((advert) => (
-          <VehicleCatalogItem key={advert._id} adverts={advert} />
+        {adverts.slice(0, maxAdverts).map((advert) => (
+          <VehicleCatalogItem key={advert._id} advert={advert} />
         ))}
       </ul>
-      <Button btnStyle="transparent">Load more</Button>
+      {maxAdverts < adverts.length && (
+        <Button onClick={handleLoadMore} btnStyle="transparent">
+          Load more
+        </Button>
+      )}
     </div>
   );
 }

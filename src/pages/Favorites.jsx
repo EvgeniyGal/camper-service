@@ -1,12 +1,12 @@
 import Aside from "../components/Aside/Aside";
 import VehicleCatalog from "../components/VehicleCatalog/VehicleCatalog";
-import styles from "./Catalog.module.css";
+import styles from "./Favorites.module.css";
 
-export default function Catalog() {
+export default function Favorites() {
   return (
     <main className={`main-container ${styles["content-container"]} `}>
       <Aside />
-      <VehicleCatalog content="catalog" />
+      <VehicleCatalog content="favorites" />
     </main>
   );
 }
