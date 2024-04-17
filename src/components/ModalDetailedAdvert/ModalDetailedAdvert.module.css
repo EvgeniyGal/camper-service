@@ -1,0 +1,160 @@
+.modal-container {
+  display: flex;
+  width: 982px;
+  height: 720px;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  padding: 40px 16px 40px 40px;
+  border-radius: 20px;
+  background-color: var(--white);
+}
+
+.content-offset {
+  padding-right: 16px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0px;
+  right: 24px;
+  background-color: transparent;
+}
+
+.close-btn svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--text);
+  fill: var(--text);
+}
+
+.rating-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--main);
+  margin-bottom: 16px;
+}
+
+.rating-container .rate {
+  text-decoration: underline;
+}
+
+.rating-container .rate svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--rating);
+  stroke: var(--rating);
+  margin-right: 4px;
+}
+
+.location-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  fill: var(--main);
+  stroke: var(--main);
+}
+
+.modal-container h2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  color: var(--main);
+  margin-bottom: 8px;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  color: var(--main);
+  margin-bottom: 24px;
+}
+
+.gallery {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.gallery ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.gallery li {
+  width: calc((100% - 32px) / 3);
+}
+
+.gallery img {
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+  margin-bottom: 44px;
+}
+
+.action-bar {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 24px;
+}
+
+.decor {
+  width: 100%;
+  height: 1px;
+  background-color: var(--decor);
+}
+
+.bottom-container {
+  margin-top: 44px;
+  display: flex;
+  gap: 24px;
+}
+
+.feature-container {
+  width: calc((100% - 24px) / 2);
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-container h3 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--main);
+  margin-top: 44px;
+  margin-bottom: 24px;
+}
+
+.feature-container-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.33333;
+  color: var(--main);
+  margin-top: 24px;
+}
+
+.feature-container-list p {
+  display: flex;
+  justify-content: space-between;
+}

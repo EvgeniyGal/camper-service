@@ -10,6 +10,8 @@
   --label: rgba(16, 24, 40, 0.6);
   --decor: rgba(16, 24, 40, 0.1);
   --white: #fff;
+  --backdrop: rgba(17, 18, 19, 0.4);
+  --scroll: #d9d9d9;
 
   --transition-type: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 

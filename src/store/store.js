@@ -13,6 +13,7 @@ import {
   REGISTER,
 } from "redux-persist";
 import filtersSlice from "./slices/filters";
+import appActionsSlice from "./slices/app-actions";
 
 const persistConfig = {
   key: "root",
@@ -27,6 +28,7 @@ const store = configureStore({
     adverts: advertsSlice.reducer,
     favorites: persistedReducer,
     filters: filtersSlice.reducer,
+    appActions: appActionsSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

@@ -1,28 +1,26 @@
 import styles from "./Button.module.css";
 import svgSprite from "../../assets/images/sprite.svg";
 
-const btnStyles = {
-  search: styles["btn-search"],
-  show: styles["btn-show"],
-  transparent: styles["btn-transparent"],
-  icon: styles["btn-icon"],
-  "icon-set": styles["btn-icon-set"],
-};
-
-function getStyle(btnStyle, isFavorite) {
-  if (btnStyle === "icon" && isFavorite) {
-    return btnStyles["icon-set"];
+function getStyle(btnStyle, isActive) {
+  if (btnStyle === "icon" && isActive) {
+    return styles["icon-active"];
   }
   if (btnStyle === "icon") {
-    return btnStyles.icon;
+    return styles["icon"];
+  }
+  if (btnStyle === "underscore" && isActive) {
+    return `${styles.underscore} ${styles["underscore-active"]}`;
+  }
+  if (btnStyle === "underscore") {
+    return styles.underscore;
   }
 
-  return btnStyles[btnStyle];
+  return styles[btnStyle];
 }
 
-export default function Button({ children, onClick, btnStyle, isFavorite }) {
+export default function Button({ children, onClick, btnStyle, isActive }) {
   return (
-    <button className={getStyle(btnStyle, isFavorite)} onClick={onClick}>
+    <button className={getStyle(btnStyle, isActive)} onClick={onClick}>
       {btnStyle === "icon" ? (
         <svg>
           <use href={`${svgSprite}#${children}`}></use>

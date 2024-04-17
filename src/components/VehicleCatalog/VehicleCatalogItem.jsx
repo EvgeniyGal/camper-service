@@ -5,16 +5,17 @@ import Details from "../Details/Details";
 import { favoritesSelector } from "../../store/selectors";
 import { useDispatch, useSelector } from "react-redux";
 import { favoritesActions } from "../../store/slices/favorites";
+import { appActionsActions } from "../../store/slices/app-actions";
+import { formatPrice } from "../../utils/formatters";
 
 export default function VehicleCatalogItem({ advert }) {
   const favorites = useSelector(favoritesSelector);
   const dispatch = useDispatch();
 
-  const features = Object.entries({
-    adults: advert.adults,
-    children: advert.children,
-    ...advert.details,
-  }).filter((feature) => feature[1] !== 0 && feature[1] !== "");
+  function handleOpenModal() {
+    dispatch(appActionsActions.toggleModalDetails());
+    dispatch(appActionsActions.setCurrentAdvert(advert._id));
+  }
 
   return (
     <li className={styles["list-item"]}>
@@ -26,7 +27,7 @@ export default function VehicleCatalogItem({ advert }) {
             {formatPrice(advert.price)}
             <Button
               onClick={() => dispatch(favoritesActions.toggle(advert._id))}
-              isFavorite={favorites.includes(advert._id)}
+              isActive={favorites.includes(advert._id)}
               btnStyle="icon"
             >
               heart
@@ -48,17 +49,17 @@ export default function VehicleCatalogItem({ advert }) {
           </span>
         </p>
         <p className={styles["description"]}>{advert.description}</p>
-        <Details features={features} />
-        <Button btnStyle="show">Show more</Button>
+        <Details
+          features={{
+            adults: advert.adults,
+            children: advert.children,
+            ...advert.details,
+          }}
+        />
+        <Button onClick={handleOpenModal} btnStyle="show">
+          Show more
+        </Button>
       </div>
     </li>
   );
-}
-
-function formatPrice(price) {
-  return Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "EUR",
-    currencyDisplay: "narrowSymbol",
-  }).format(price);
 }

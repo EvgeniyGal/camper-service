@@ -4,6 +4,10 @@ export const advertsSelector = (state) => state.adverts.items;
 export const favoritesSelector = (state) => state.favorites.items;
 export const filtersLocationSelector = (state) => state.filters.location;
 export const filtersFeaturesSelector = (state) => state.filters.features;
+export const isModalDetailsOpenSelector = (state) =>
+  state.appActions.isModalDetailsOpen;
+export const currentAdvertIdSelector = (state) =>
+  state.appActions.currentAdvert;
 
 export const filteredAdvertsSelector = createSelector(
   [advertsSelector, filtersLocationSelector, filtersFeaturesSelector],
@@ -34,5 +38,14 @@ export const favoritesAdvertsSelector = createSelector(
   [filteredAdvertsSelector, favoritesSelector],
   (filteredAdverts, favorites) => {
     return filteredAdverts.filter((advert) => favorites.includes(advert._id));
+  }
+);
+
+export const currentAdvertSelector = createSelector(
+  [advertsSelector, currentAdvertIdSelector],
+  (adverts, currentIdAdvert) => {
+    return currentIdAdvert
+      ? adverts.find((advert) => advert._id === currentIdAdvert)
+      : null;
   }
 );
