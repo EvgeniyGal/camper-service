@@ -4,7 +4,7 @@ import { appActionsActions } from "../../store/slices/app-actions";
 import svgSprite from "../../assets/images/sprite.svg";
 import { currentAdvertSelector } from "../../store/selectors";
 import styles from "./ModalDetailedAdvert.module.css";
-import { formatPrice } from "../../utils/formatters";
+import { formatPrice } from "../../helpers/formatters";
 import { Scrollbars } from "rc-scrollbars";
 import Button from "../Button/Button";
 import { useState } from "react";

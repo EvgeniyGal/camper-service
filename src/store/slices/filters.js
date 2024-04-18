@@ -18,6 +18,7 @@ const filtersSlice = createSlice({
     setFeatures: (state, action) => {
       state.features = action.payload;
     },
+    setDefault: () => INITIAL_STATE,
   },
 });
 

@@ -6,7 +6,7 @@ import { favoritesSelector } from "../../store/selectors";
 import { useDispatch, useSelector } from "react-redux";
 import { favoritesActions } from "../../store/slices/favorites";
 import { appActionsActions } from "../../store/slices/app-actions";
-import { formatPrice } from "../../utils/formatters";
+import { formatPrice } from "../../helpers/formatters";
 
 export default function VehicleCatalogItem({ advert }) {
   const favorites = useSelector(favoritesSelector);
