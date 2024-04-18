@@ -1,0 +1,42 @@
+.list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 16px;
+}
+
+.round-decor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 60px;
+  width: 60px;
+  height: 60px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  background-color: var(--block-feature);
+  color: var(--button);
+}
+
+.title-container h3 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.33333;
+  color: var(--main);
+  margin: 0 0 4px 0;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+}

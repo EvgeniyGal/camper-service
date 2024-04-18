@@ -3,9 +3,14 @@
   gap: 50px;
   justify-content: start;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
   padding: 16px 0;
-  background-color: var(--decor);
+  background-color: var(--scroll);
   margin-bottom: 24px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .logo {

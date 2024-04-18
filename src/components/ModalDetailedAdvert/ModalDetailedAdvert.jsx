@@ -9,15 +9,9 @@ import { Scrollbars } from "rc-scrollbars";
 import Button from "../Button/Button";
 import { useState } from "react";
 import Details from "../Details/Details";
-import { Rating, Star } from "@smastrom/react-rating";
-
 import "@smastrom/react-rating/style.css";
-
-const ratingStyle = {
-  itemShapes: Star,
-  activeFillColor: "var(--rating)",
-  inactiveFillColor: "var(--block-feature)",
-};
+import ReviewList from "../ReviewList/ReviewList";
+import BookingForm from "../BookingForm/BookingForm";
 
 export default function ModalDetailedAdvert() {
   const [infoContent, setInfoContent] = useState("features");
@@ -121,13 +115,11 @@ export default function ModalDetailedAdvert() {
                   </>
                 )}
                 {infoContent === "reviews" && (
-                  <Rating
-                    itemStyles={ratingStyle}
-                    style={{ maxWidth: 96 }}
-                    value={2.8}
-                    readOnly
-                  />
+                  <ReviewList reviews={currentAdvert.reviews} />
                 )}
+              </div>
+              <div className={styles["form-container"]}>
+                <BookingForm />
               </div>
             </div>
             <button

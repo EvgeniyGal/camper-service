@@ -134,6 +134,10 @@
   flex-direction: column;
 }
 
+.form-container {
+  width: calc((100% - 24px) / 2);
+}
+
 .feature-container h3 {
   font-weight: 600;
   font-size: 20px;
