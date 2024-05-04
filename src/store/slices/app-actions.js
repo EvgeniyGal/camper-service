@@ -13,6 +13,7 @@ const appActionsSlice = createSlice({
       state.isModalDetailsOpen = !state.isModalDetailsOpen;
     },
     setCurrentAdvert: (state, action) => {
+      console.log(action.payload);
       state.currentAdvert = action.payload;
     },
   },

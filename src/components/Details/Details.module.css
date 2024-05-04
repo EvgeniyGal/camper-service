@@ -4,3 +4,24 @@
   justify-self: start;
   gap: 8px;
 }
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  padding: 12px 18px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--main);
+  background: var(--block-feature);
+}
+
+.item svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  fill: var(--main);
+  stroke: var(--main);
+}

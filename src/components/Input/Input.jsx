@@ -20,7 +20,6 @@ export default function Input({ children, name, iconName, warning, ...props }) {
             iconName ? styles["icon"] : ""
           }`}
           name={name}
-          id={name}
           type="text"
           {...props}
         />

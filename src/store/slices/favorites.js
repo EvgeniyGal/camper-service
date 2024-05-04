@@ -9,9 +9,14 @@ const favoritesSlice = createSlice({
   initialState: INITIAL_STATE,
   reducers: {
     toggle(state, action) {
-      state.items = state.items.includes(action.payload)
-        ? state.items.filter((id) => id !== action.payload)
-        : [...state.items, action.payload];
+      const advertIndex = state.items.findIndex(
+        ({ _id }) => _id === action.payload._id
+      );
+      if (advertIndex === -1) {
+        state.items.push(action.payload);
+      } else {
+        state.items.splice(advertIndex, 1);
+      }
     },
   },
 });

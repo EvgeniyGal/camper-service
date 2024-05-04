@@ -1,4 +1,4 @@
-import DetailsItem from "./DetailsItem";
+import svgSprite from "../../assets/images/sprite.svg";
 import styles from "./Details.module.css";
 
 export default function Details({ features }) {
@@ -9,7 +9,12 @@ export default function Details({ features }) {
   return (
     <ul className={styles.list}>
       {featuresArr.map(([title, value]) => (
-        <DetailsItem key={title} title={title} value={value} />
+        <li key={title} className={styles.item}>
+          <svg>
+            <use href={`${svgSprite}#${title}`}></use>
+          </svg>{" "}
+          {value}
+        </li>
       ))}
     </ul>
   );

@@ -34,13 +34,6 @@ export const filteredAdvertsSelector = createSelector(
   }
 );
 
-export const favoritesAdvertsSelector = createSelector(
-  [filteredAdvertsSelector, favoritesSelector],
-  (filteredAdverts, favorites) => {
-    return filteredAdverts.filter((advert) => favorites.includes(advert._id));
-  }
-);
-
 export const currentAdvertSelector = createSelector(
   [advertsSelector, currentAdvertIdSelector],
   (adverts, currentIdAdvert) => {

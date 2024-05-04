@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Catalog from "./pages/Catalog";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -24,6 +24,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/favorites" element={<Favorites />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
       {isModalDetailsOpen && <ModalDetailedAdvert />}

@@ -33,40 +33,35 @@ export default function FilterForm() {
       <p className={styles["decor"]}></p>
       <div className={styles["checkbox-container"]}>
         <label className={styles["checkbox-item-container"]}>
-          <input
-            type="checkbox"
-            id="equip"
-            name="equip"
-            value="airConditioner"
-          />
+          <input type="checkbox" name="equip" value="airConditioner" />
           <svg>
             <use href={`${svgSprite}#ac`}></use>
           </svg>
           <span>AC</span>
         </label>
         <label className={styles["checkbox-item-container"]}>
-          <input type="checkbox" id="equip" name="equip" value="transmission" />
+          <input type="checkbox" name="equip" value="transmission" />
           <svg>
             <use href={`${svgSprite}#transmission`}></use>
           </svg>
           <span>Automatic</span>
         </label>
         <label className={styles["checkbox-item-container"]}>
-          <input type="checkbox" id="equip" name="equip" value="kitchen" />
+          <input type="checkbox" name="equip" value="kitchen" />
           <svg>
             <use href={`${svgSprite}#kitchen`}></use>
           </svg>
           <span>Kitchen</span>
         </label>
         <label className={styles["checkbox-item-container"]}>
-          <input type="checkbox" id="equip" name="equip" value="TV" />
+          <input type="checkbox" name="equip" value="TV" />
           <svg>
             <use href={`${svgSprite}#TV`}></use>
           </svg>
           <span>TV</span>
         </label>
         <label className={styles["checkbox-item-container"]}>
-          <input type="checkbox" id="equip" name="equip" value="shower" />
+          <input type="checkbox" name="equip" value="shower" />
           <svg>
             <use href={`${svgSprite}#shower`}></use>
           </svg>
@@ -77,19 +72,14 @@ export default function FilterForm() {
       <p className={styles["decor"]}></p>
       <div className={styles["checkbox-type-btn-container"]}>
         <label className={styles["checkbox-type-btn-item-container"]}>
-          <input type="checkbox" id="type" name="type" value="van" />
+          <input type="checkbox" name="type" value="van" />
           <svg>
             <use href={`${svgSprite}#van`}></use>
           </svg>
           <span>Van</span>
         </label>
         <label className={styles["checkbox-type-btn-item-container"]}>
-          <input
-            type="checkbox"
-            id="type"
-            name="type"
-            value="fullyIntegrated"
-          />
+          <input type="checkbox" name="type" value="fullyIntegrated" />
           <svg>
             <use href={`${svgSprite}#fully-integrated`}></use>
           </svg>
@@ -98,7 +88,7 @@ export default function FilterForm() {
           </span>
         </label>
         <label className={styles["checkbox-type-btn-item-container"]}>
-          <input type="checkbox" id="type" name="type" value="alcove" />
+          <input type="checkbox" name="type" value="alcove" />
           <svg>
             <use href={`${svgSprite}#alcove`}></use>
           </svg>
