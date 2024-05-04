@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "../Button/Button";
-import Input from "../Input/Input";
+import Input from "../In/Input";
 import styles from "./BookingForm.module.css";
 import {
   bookingDateCheck,

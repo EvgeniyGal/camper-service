@@ -1,5 +1,5 @@
 import styles from "./Aside.module.css";
-import Input from "../Input/Input";
+import Input from "../In/Input";
 import FilterForm from "../FilterForm/FilterForm";
 import { useDispatch, useSelector } from "react-redux";
 import { filtersActions } from "../../store/slices/filters";
