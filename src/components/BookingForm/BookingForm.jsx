@@ -69,8 +69,6 @@ export default function BookingForm() {
         <Input
           name="bookingDate"
           type="text"
-          onFocus={(e) => (e.target.type = "date")}
-          onBlur={(e) => (e.target.type = "text")}
           placeholder="Booking date"
           warning={formDataCheck.bookingDateCheck}
         />

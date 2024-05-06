@@ -1,7 +1,34 @@
 import styles from "./Input.module.css";
 import svgSprite from "../../assets/images/sprite.svg";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { useState } from "react";
 
 export default function Input({ children, name, iconName, warning, ...props }) {
+  const [date, setDate] = useState("");
+
+  let inputElement = (
+    <input
+      className={`${styles["input-field"]} ${iconName ? styles["icon"] : ""}`}
+      name={name}
+      type="text"
+      {...props}
+    />
+  );
+
+  if (name === "bookingDate") {
+    inputElement = (
+      <DatePicker
+        className={styles["input-field"]}
+        name={name}
+        selected={date}
+        onChange={(date) => setDate(date)}
+        {...props}
+        placeholderText="Booking date"
+      />
+    );
+  }
+
   return (
     <div className={styles["input-container"]}>
       {children && (
@@ -9,22 +36,15 @@ export default function Input({ children, name, iconName, warning, ...props }) {
           {children}
         </label>
       )}
-      <p className={styles["input-field-container"]}>
+      <div className={styles["input-field-container"]}>
         {iconName && (
           <svg>
             <use href={`${svgSprite}#${iconName}`}></use>
           </svg>
         )}
-        <input
-          className={`${styles["input-field"]} ${
-            iconName ? styles["icon"] : ""
-          }`}
-          name={name}
-          type="text"
-          {...props}
-        />
+        {inputElement}
         {warning && <span className={styles["warning"]}>{warning}</span>}
-      </p>
+      </div>
     </div>
   );
 }
