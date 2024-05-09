@@ -15,6 +15,12 @@
   gap: 32px;
 }
 
+.no-content {
+  width: calc(100% - 360px);
+  padding-top: 200px;
+  text-align: center;
+}
+
 .list-item {
   width: 100%;
   display: flex;

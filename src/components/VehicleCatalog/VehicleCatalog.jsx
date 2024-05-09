@@ -36,6 +36,14 @@ export default function VehicleCatalog({ content }) {
     );
   }
 
+  if (!adverts.length) {
+    return (
+      <h2 className={styles["no-content"]}>
+        {content === "catalog" ? "No results" : "No favorites"}
+      </h2>
+    );
+  }
+
   return (
     <div className={styles["catalog-container"]}>
       <ul className={styles["list-container"]}>

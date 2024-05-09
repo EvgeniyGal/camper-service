@@ -20,11 +20,7 @@ export default function Modal({ onClose, children }) {
   }
 
   return (
-    <div
-      id="backdrop"
-      className={styles.backdrop}
-      onClick={handleClickBackdrop}
-    >
+    <div className={styles.backdrop} onClick={handleClickBackdrop}>
       {children}
     </div>
   );

@@ -7,6 +7,9 @@ import {
   emailCheck,
   nameCheck,
 } from "../../helpers/form-data-checks";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { appActionsActions } from "../../store/slices/app-actions";
 
 const INITIAL_STATE = {
   nameCheck: "",
@@ -16,6 +19,8 @@ const INITIAL_STATE = {
 
 export default function BookingForm() {
   const [formDataCheck, setFormDataCheck] = useState(INITIAL_STATE);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -38,7 +43,8 @@ export default function BookingForm() {
     setFormDataCheck(INITIAL_STATE);
 
     console.log(data);
-    e.target.reset();
+    dispatch(appActionsActions.toggleModalDetails());
+    navigate("/");
   }
 
   return (

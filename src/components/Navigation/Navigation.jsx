@@ -1,6 +1,8 @@
 import { NavLink, Outlet } from "react-router-dom";
 import styles from "./Navigation.module.css";
 import svgSprite from "../../assets/images/sprite.svg";
+import { Suspense } from "react";
+import { BallTriangle } from "react-loader-spinner";
 
 export default function Navigation() {
   return (
@@ -39,7 +41,16 @@ export default function Navigation() {
         </nav>
       </header>
 
-      <Outlet />
+      <Suspense
+        fallback={
+          <BallTriangle
+            color="var(--button-active)"
+            wrapperClass={styles["spinner"]}
+          />
+        }
+      >
+        <Outlet />
+      </Suspense>
     </>
   );
 }

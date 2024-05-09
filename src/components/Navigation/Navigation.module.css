@@ -5,7 +5,7 @@
   align-items: center;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1;
   padding: 16px 0;
   background-color: var(--scroll);
   margin-bottom: 24px;
@@ -32,4 +32,15 @@
 
 .active {
   color: var(--button-active);
+}
+
+.spinner {
+  margin: 32px auto;
+  width: 100px;
+  height: 100px;
+}
+
+.spinner svg {
+  width: 100px;
+  height: 100px;
 }
